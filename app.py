@@ -11,6 +11,11 @@ app.config['MONGO_URI'] = 'mongodb+srv://flaskuser:A2kSols123@cluster0.vzyqo.mon
 mongo.init_app(app)
 
 
+@app.route('/')
+def landing_page():
+    return "Working"
+
+
 @app.route('/gps_tracking', methods=['POST'])
 def index():
     try:
@@ -30,6 +35,8 @@ def index():
     except Exception as e:
         print("error==", e)
         return "Something went wrong", 400
+
+
 #
 #
 # @app.route('/gps_tracking1', methods=['GET'])
