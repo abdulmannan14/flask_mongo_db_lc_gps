@@ -30,24 +30,24 @@ def index():
     except Exception as e:
         print("error==", e)
         return "Something went wrong", 400
-
-
-@app.route('/gps_tracking1', methods=['GET'])
-def get_data():
-    try:
-        finalgpscluster = mongo.db.finalgpscluster
-        data = finalgpscluster.find({'reservation_id': '27'})
-        print("data is---", data)
-        list_obj = list(data)
-        data_obj = list_obj[len(list_obj) - 1]
-        print("list=====", list_obj)
-        print("list=====", data_obj)
-
-        finalgpscluster = mongo.db.finalgpscluster
-        return "Please enter Both  Reservation_id , latitude , longitude"
-    except Exception as e:
-        print("error==", e)
-        return "Something went wrong", 400
+#
+#
+# @app.route('/gps_tracking1', methods=['GET'])
+# def get_data():
+#     try:
+#         finalgpscluster = mongo.db.finalgpscluster
+#         data = finalgpscluster.find({'reservation_id': '27'})
+#         print("data is---", data)
+#         list_obj = list(data)
+#         data_obj = list_obj[len(list_obj) - 1]
+#         print("list=====", list_obj)
+#         print("list=====", data_obj)
+#
+#         finalgpscluster = mongo.db.finalgpscluster
+#         return "Please enter Both  Reservation_id , latitude , longitude"
+#     except Exception as e:
+#         print("error==", e)
+#         return "Something went wrong", 400
 
 
 if __name__ == '__main__':
